@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>SWAPI Demo</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width">
+		<script src="lib/swapi.js"></script>
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
+		<!-- GETTING LATEST JQUERY VIA CDN  -->
+		<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc=" crossorigin="anonymous"></script>
+
+		<!-- TABLESORTER -->
+		<script type="text/javascript" src="jquery.tablesorter/jquery-latest.js"></script>
+		<script type="text/javascript" src="jquery.tablesorter/jquery.tablesorter.js"></script>
+
+		<!-- LOADING THE API DATA -->
+		<script src="data.js"></script>
+
+		<!-- STYLING THE TABLE -->
+		<style>
+			body {
+				background-color: black;
+				color: white;
+			}
+			
+			table {
+				border-collapse: collapse;
+			}
+
+			table, th, td {
+				border: 1px solid gray;
+			}
+
+			th, td {
+				padding: 15px;
+				text-align: left;
+			}
+		</style>
+
+		<!-- APPLYING THE TABLESORT, MIGHT AS WELL IN ANOTHER FILE -->
+		<script>
+			$(document).ready(function() {
+	    	console.log('hello!!');
+	      $("#sortTable").tablesorter();
+			});
+		</script>
+		
+	</head>
+
+	<body>
+		<!--<div id="categories_part">
+			<h4>showing all categories inside the SWAPI</h4>
+			<pre id="categories"></pre>
+		</div>-->
+
+		<!-- THE ACTUAL TABLE. ADDED THEAD & TBODY FOR TABLESORTER TO WORK -->
+		<h4>Retrieves specific starships data</h4>
+		<table id="sortTable" class="tablesorter">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>model</th>
+					<th>manufacturer</th>
+					<th id="crew">crew</th>
+					<th>edited</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr>
+					<td>10</td>
+					<td><span id="starshipID_10_model"></span></td>
+					<td><span id="starshipID_10_manufacturer"></span></td>
+					<td><span id="starshipID_10_crew"></span></td>
+					<td><span id="starshipID_10_edited"></span></td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td><span id="starshipID_5_model"></span></td>
+					<td><span id="starshipID_5_manufacturer"></span></td>
+					<td><span id="starshipID_5_crew"></span></td>
+					<td><span id="starshipID_5_edited"></span></td>
+				</tr>
+				<tr>
+					<td>9</td>
+					<td><span id="starshipID_9_model"></span></td>
+					<td><span id="starshipID_9_manufacturer"></span></td>
+					<td><span id="starshipID_9_crew"></span></td>
+					<td><span id="starshipID_9_edited"></span></td>
+				</tr>
+				<tr>
+					<td>15</td>
+					<td><span id="starshipID_15_model"></span></td>
+					<td><span id="starshipID_15_manufacturer"></span></td>
+					<td><span id="starshipID_15_crew"></span></td>
+					<td><span id="starshipID_15_edited"></span></td>
+				</tr>
+				<tr>
+					<td>11</td>
+					<td><span id="starshipID_11_model"></span></td>
+					<td><span id="starshipID_11_manufacturer"></span></td>
+					<td><span id="starshipID_11_crew"></span></td>
+					<td><span id="starshipID_11_edited"></span></td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>
